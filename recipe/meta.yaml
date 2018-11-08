@@ -1,0 +1,36 @@
+{% set name = "dem2points" %}
+{% set version = "master" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://github.com/OpenDroneMap/dem2points/archive/{{ version }}.tar.gz
+  sha256: ed8f83e4ee9ad7aa64ca20a2f90576250225bd90b4fe16f445cba69b27077f40
+
+build:
+    number: 0
+
+requirements:
+  build:
+    # - {{ compiler("c") }}
+    # - {{ compiler("cxx") }}
+    - cmake
+    - ninja
+  host:
+    - libgdal {{ libgdal }}
+
+test:
+  commands:
+    - test -f $PREFIX/bin/dem2points
+
+about:
+  home: https://github.com/OpenDroneMap/dem2points
+  license: GPL 3
+  summary: Extract 3D points from digital elevation models
+
+extra:
+  recipe-maintainers:
+    - v-turin

@@ -1,5 +1,6 @@
 {% set name = "dem2points" %}
 {% set version = "master" %}
+{% set commit = "b05d61618a01d9ab700f11117b47264eddb7820f" %}
 
 package:
   name: {{ name }}
@@ -7,8 +8,8 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://github.com/OpenDroneMap/dem2points/archive/{{ version }}.tar.gz
-  sha256: ed8f83e4ee9ad7aa64ca20a2f90576250225bd90b4fe16f445cba69b27077f40
+  url: https://github.com/OpenDroneMap/dem2points/archive/{{ commit }}.tar.gz
+  sha256: dfde508afa4d4f7f6b2281dba9d88ceb0113068bea2ebfd33ee6d9f7dbb66c63
 
 build:
     number: 0
